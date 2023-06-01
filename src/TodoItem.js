@@ -1,10 +1,10 @@
 const TodoItem = ({ task }) => {
-    return (
+  return (
       <article>
-        <span>{ task }</span>
-        <button>Delete</button>
+          <span>{ task }</span>
+          <button>Delete</button>
       </article>
-    )
+  )
 }
 
 export default TodoItem;
