@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/no-node-access */
 import { fireEvent, render, screen, within } from "@testing-library/react";
 import TodoList from "./TodoList";
 
@@ -32,7 +33,8 @@ describe("The Todo list component", () => {
     test("removes a task from the list", () => {
         render(<TodoList />);
 
-        const deleteButtonElement = screen.getByRole(
+        const firstTaskElement = screen.getByText("Scoop litter").parentElement;
+        const deleteButtonElement = within(firstTaskElement).getByRole(
             "button",
             { name: /Delete/i }
         );
